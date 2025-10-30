@@ -1,0 +1,426 @@
+/* src/components/StudyMaterial.css */
+.study-material-container {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.week-main-title {
+  color: #0056b3;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.topic-section {
+  margin-bottom: 40px;
+}
+
+.topic-title {
+  font-size: 1.7rem;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0056b3;
+}
+
+.topic-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.sub-section {
+  margin-bottom: 25px;
+  padding-left: 20px;
+  border-left: 3px solid #007bff;
+}
+
+.sub-section-title {
+  font-size: 1.3rem;
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sub-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.sub-section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.sub-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.example-box {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d7ff;
+  border-left: 5px solid #007bff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  color: #333;
+}
+
+.example-box strong {
+  font-style: normal;
+}
+
+/* Fade-in animation for smooth content change */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .study-material-container {
+    padding: 20px;
+  }
+
+  .week-main-title {
+    font-size: 1.6rem;
+  }
+
+  .topic-title {
+    font-size: 1.4rem;
+  }
+
+  .sub-section-title {
+    font-size: 1.15rem;
+  }
+}
+/* ==> YEH NAYE STYLES FILE KE AAKHIR MEIN ADD KAREIN <== */
+
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 2px solid #0056b3;
+  margin-bottom: 15px;
+}
+
+.topic-title {
+  /* Title se bottom border hata denge kyunki woh ab header par hai */
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+.topic-label {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0; /* Ensures the label doesn't shrink on small screens */
+}
+
+.label-important {
+  background-color: #c82333; /* Darker Red */
+  box-shadow: 0 2px 5px rgba(200, 35, 51, 0.4);
+}
+
+.label-less-important {
+  background-color: #5a6268; /* Darker Gray */
+  box-shadow: 0 2px 5px rgba(90, 98, 104, 0.4);
+}
+
+/* Mobile par title aur label ko stack karne ke liye */
+@media (max-width: 500px) {
+  .topic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+/* src/components/StudyMaterial.css */
+.study-material-container {
+  padding: 0; /* Extra padding hata di */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* KEY CHANGE 2: Animation ko basic fade-in kar diya hai (bina slide ke) aur duration kam kar di */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.week-main-title {
+  color: #0056b3;
+  font-size: 2rem;
+  margin: 0; /* Margin hata diya */
+  padding: 20px; /* Padding yahan de di */
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.topic-section {
+  margin-bottom: 30px;
+  padding: 0 20px 20px 20px; /* Padding yahan de di */
+}
+
+.topic-section:first-of-type {
+    padding-top: 20px; /* Pehle section ke liye thoda top padding */
+}
+
+.sub-section {
+  margin-bottom: 20px;
+  /* KEY CHANGE 1: Blue line (border-left) aur extra padding-left hata di */
+  border-left: none;
+  padding-left: 0;
+}
+
+.sub-section-title {
+  font-size: 1.3rem;
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sub-section p,
+.sub-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.sub-section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.example-box {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d7ff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  color: #333;
+}
+
+.example-box strong {
+  font-style: normal;
+}
+
+/* Fade-in animation - Ab sirf opacity change hogi */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styling for Labels */
+.topic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 2px solid #0056b3;
+  margin-bottom: 15px;
+}
+
+.topic-title {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  font-size: 1.7rem;
+}
+
+.topic-label {
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.label-important {
+  background-color: #c82333;
+  box-shadow: 0 2px 5px rgba(200, 35, 51, 0.4);
+}
+
+.label-less-important {
+  background-color: #5a6268;
+  box-shadow: 0 2px 5px rgba(90, 98, 104, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .week-main-title { font-size: 1.6rem; }
+  .topic-title { font-size: 1.4rem; }
+  .sub-section-title { font-size: 1.15rem; }
+  .topic-section { padding: 0 15px 15px 15px; }
+  .topic-section:first-of-type { padding-top: 15px; }
+}
+
+@media (max-width: 500px) {
+  .topic-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+/* src/components/StudyMaterial.css */
+
+.study-material-container {
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.week-main-title {
+  color: #0056b3;
+  font-size: 2rem;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.topic-section {
+  margin-bottom: 30px;
+  padding: 0 20px 20px 20px;
+}
+
+.topic-section:first-of-type {
+    padding-top: 20px;
+}
+
+/* 
+  KEY CHANGE 1: Title & Label ko upar-neeche stack kiya aur space theek kiya
+*/
+.topic-header {
+  display: flex;
+  /* Title aur Label ko vertical (upar-neeche) kar diya */
+  flex-direction: column; 
+  /* Sabko left se start kiya */
+  align-items: flex-start; 
+  /* Beech ka vertical gap kam kar diya */
+  gap: 5px; 
+  /* Border yahan se hata diya */
+  border-bottom: none; 
+  /* Extra neeche ka margin hata diya */
+  margin-bottom: 0; 
+}
+
+.topic-label {
+  font-size: 0.8rem;
+  padding: 4px 12px; /* Thoda vertical padding kam kiya */
+  border-radius: 15px;
+  color: white;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.topic-title {
+  /* Border ab સીધા title ke neeche aayega */
+  border-bottom: 2px solid #0056b3; 
+  margin-bottom: 15px; /* Content se pehle ka space */
+  padding-bottom: 8px; /* Title aur line ke beech ka space */
+  font-size: 1.7rem;
+  width: 100%; /* Taaki border poori width le */
+}
+
+.label-important {
+  background-color: #c82333;
+  box-shadow: 0 2px 5px rgba(200, 35, 51, 0.4);
+}
+
+.label-less-important {
+  background-color: #5a6268;
+  box-shadow: 0 2px 5px rgba(90, 98, 104, 0.4);
+}
+
+.sub-section {
+  margin-bottom: 20px;
+  border-left: none;
+  padding-left: 0;
+}
+
+.sub-section-title {
+  font-size: 1.3rem;
+  color: #007bff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.sub-section p,
+.sub-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.sub-section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.example-box {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d7ff;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  color: #333;
+}
+
+.example-box strong {
+  font-style: normal;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* 
+    KEY CHANGE 2: Mobile par Main Title ka size aur space kam kiya
+  */
+  .week-main-title { 
+    font-size: 1.4rem; /* Size aur kam kar diya */
+    padding: 15px 10px; /* Aas-paas ki jagah kam kar di */
+  }
+
+  .topic-title { font-size: 1.4rem; }
+  .sub-section-title { font-size: 1.15rem; }
+  .topic-section { padding: 0 15px 15px 15px; }
+  .topic-section:first-of-type { padding-top: 15px; }
+}
+
+/* Pehle wala 500px ka media query ab zaroori nahi hai kyunki layout by default stack ho gaya hai */

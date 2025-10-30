@@ -1,0 +1,183 @@
+/* src/components/Header.css */
+.app-header {
+  background-color: #ffffff;
+  padding: 15px 30px; /* Thoda padding adjust kiya */
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+  /* Mobile ke liye sticky positioning */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 55px; /* Ek fixed height de di (padding + content) */
+  display: flex; /* Content ko center me laane ke liye */
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  /* margin-bottom: 10px; - Hata diya flex ki wajah se */
+}
+
+/* ... baaki styles waise hi rakho ... */
+.title {
+  margin: 0;
+  font-size: 2rem;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+.subtitle {
+  /* Subtitle ko PC par dikhane ke liye aur mobile par chupane ke liye */
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  margin-left: 20px;
+}
+
+/* Tablet aur Mobile ke liye adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 10px 20px;
+    justify-content: flex-start; /* Mobile par title left me rakhte hain */
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    display: none; /* Mobile par subtitle hide kar dete hain */
+  }
+}
+
+@media (max-width: 1024px) {
+    .subtitle {
+        display: none;
+    }
+}
+/* src/components/Header.css */
+.app-header {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  /* PC ke liye height */
+  height: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+/* Tablet aur Mobile ke liye adjustments */
+@media (max-width: 1024px) {
+  .app-header {
+    /* KEY CHANGE: Mobile ke liye height kam kar di */
+    height: 48px;
+    padding: 10px 20px;
+    justify-content: center; /* Mobile par bhi center-aligned */
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+/* src/components/Header.css */
+.app-header {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  /* PC ke liye height */
+  height: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+/* Tablet aur Mobile ke liye adjustments */
+@media (max-width: 1024px) {
+  .app-header {
+    /* KEY CHANGE: Mobile ke liye height aur bhi kam kar di (40px) */
+    height: 40px;
+    padding: 5px 20px;
+    justify-content: center;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
+/* src/components/Header.css */
+.app-header {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-bottom: 2px solid #e0e0e0;
+  text-align: center;
+  /* KEY CHANGE: Yahan se 'position: sticky' hata diya gaya hai kyunki yeh App.css me handled hai */
+  z-index: 100;
+  height: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0056b3;
+  font-weight: 600;
+}
+
+/* Tablet aur Mobile ke liye adjustments */
+@media (max-width: 1024px) {
+  .app-header {
+    height: 40px;
+    padding: 5px 20px;
+    justify-content: center;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}

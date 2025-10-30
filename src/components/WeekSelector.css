@@ -1,0 +1,193 @@
+/* src/components/WeekSelector.css */
+.week-selector-nav {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  border-bottom: 1px solid #dee2e6;
+  overflow-x: auto; /* Mobile par scroll ke liye */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.week-selector {
+  display: flex;
+  justify-content: center; /* PC par center me */
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.week-tab {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0056b3;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Tabs ko shrink hone se rokne ke liye */
+}
+
+.week-tab:hover {
+  background-color: #e9ecef;
+  color: #003d82;
+}
+
+.week-tab.active {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Mobile par left-aligned rakhte hain */
+@media (max-width: 768px) {
+  .week-selector {
+    justify-content: flex-start; /* Mobile par start se align */
+  }
+
+  .week-tab {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+/* src/components/WeekSelector.css */
+
+.week-selector-nav {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.week-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.week-tab {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0056b3;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.week-tab:hover {
+  background-color: #e9ecef;
+  color: #003d82;
+}
+
+.week-tab.active {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* KEY CHANGE: Mobile par tabs ko chhota karne ke liye */
+@media (max-width: 768px) {
+  .week-selector {
+    justify-content: flex-start;
+    /* Tabs ke beech ka gap kam kar diya */
+    gap: 6px; 
+  }
+
+  .week-tab {
+    /* Padding kaafi kam kar di hai taaki 6+ tabs fit ho sakein */
+    padding: 8px 14px; 
+    /* Font size bhi thoda chhota kar diya hai */
+    font-size: 0.85rem; 
+  }
+}
+/* src/components/WeekSelector.css */
+
+.week-selector-nav {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar for a cleaner look */
+  scrollbar-width: none; /* Firefox */
+}
+.week-selector-nav::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.week-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.week-tab {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0056b3;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.week-tab:hover {
+  background-color: #e9ecef;
+  color: #003d82;
+}
+
+.week-tab.active {
+  background-color: #0056b3;
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Yahan PC ke liye span elements ko hide/ignore kar sakte hain ya default chhod sakte hain */
+.tab-text, .tab-number {
+  display: inline; /* PC par normal text jaisa dikhe */
+}
+
+
+/* KEY CHANGE: Mobile par tabs ko vertical karne ke liye */
+@media (max-width: 768px) {
+  .week-selector {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .week-tab {
+    /* Step 1: Flexbox ko column direction me set kiya */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* Step 2: Padding ko vertical look ke hisaab se adjust kiya */
+    padding: 6px 8px; 
+    
+    /* Step 3: Har tab ki ek minimum width set ki taaki sab ek jaise dikhein */
+    min-width: 55px; 
+    line-height: 1.2; /* Line height kam ki taaki "Week" aur number paas-paas aayein */
+  }
+  
+  /* Step 4: "Week" text ko style kiya */
+  .tab-text {
+    font-size: 0.7rem; /* "Week" ka font chhota kar diya */
+    font-weight: 400;
+    display: block; /* Ensure it takes its own line */
+  }
+
+  /* Step 5: Number ko style kiya */
+  .tab-number {
+    font-size: 1rem; /* Number ka font bada rakha */
+    font-weight: 600;
+    display: block; /* Ensure it takes its own line */
+  }
+}

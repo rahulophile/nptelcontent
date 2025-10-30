@@ -1,0 +1,363 @@
+/* src/App.css */
+
+/* Body se default scrollbar hata denge */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  overflow: hidden; /* IMPORTANT: Prevents the whole page from scrolling */
+}
+
+.app-container {
+  display: grid;
+  /* Poori screen ki height le lo */
+  height: 100vh;
+  width: 100vw;
+  
+  /* PC Layout: 250px ka sidebar (week selector) aur baaki content area */
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr; /* Header apni height lega, baaki content bachi hui jagah */
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+
+/* Header ko uske grid area me fix karte hain */
+.app-container > .app-header-wrapper {
+  grid-area: header;
+  position: sticky; /* Always stick to the top */
+  top: 0;
+  z-index: 100; /* Ensure it's above everything else */
+}
+
+/* Week Selector ko uske grid area (sidebar) me daalte hain */
+.app-container > .week-selector-nav {
+  grid-area: sidebar;
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa; /* Background color zaroori hai */
+  /* Agar weeks zyada ho to sidebar khud scroll ho, content nahi */
+  overflow-y: auto;
+}
+
+/* PC par WeekSelector ko vertical banate hain */
+.app-container > .week-selector-nav .week-selector {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 20px 15px;
+  gap: 15px;
+}
+
+.app-container > .week-selector-nav .week-tab {
+  text-align: left;
+}
+
+.main-content {
+  grid-area: main;
+  /* YAHI JAADU HAI: Sirf main content area hi scroll hoga */
+  overflow-y: auto;
+  padding: 30px;
+}
+
+/* Tablet aur Mobile ke liye (Responsive Design) */
+@media (max-width: 1024px) {
+  /* Body par scroll wapas enable kar denge mobile ke liye agar zaroori ho,
+     lekin humara layout isko handle kar lega */
+  body {
+    overflow: auto;
+  }
+
+  .app-container {
+    /* Layout badal kar simple top-to-bottom kar denge */
+    display: block; /* Grid se block layout par aa jayenge */
+    height: auto;
+  }
+  
+  /* Mobile par WeekSelector (sidebar) ko header ke neeche chipka denge */
+  .app-container > .week-selector-nav {
+    position: sticky;
+    /* Header ke just neeche. Maan lo header ki height 60-80px hai. */
+    /* Hum header ki actual height ke neeche stick karenge. Iske liye header ko bhi sticky karna hoga. */
+    top: 85px; /* Adjust this value based on your final header height */
+    z-index: 99;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    overflow-y: hidden;
+    overflow-x: auto; /* Horizontal scroll on mobile */
+  }
+
+  /* WeekSelector ko wapas horizontal kar denge */
+  .app-container > .week-selector-nav .week-selector {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+}
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  overflow: hidden; /* Page ki default scrolling band */
+}
+
+.app-container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  
+  /* PC Layout: 240px ka sidebar, baaki content area */
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+
+.app-container > .app-header-wrapper {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-container > .week-selector-nav {
+  grid-area: sidebar;
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  overflow-y: auto; /* Agar weeks zyada ho to sidebar scroll hoga */
+}
+
+.app-container > .week-selector-nav .week-selector {
+  flex-direction: column;
+  align-items: stretch;
+  /* KEY CHANGE: PC sidebar ki padding kam kar di */
+  padding: 15px 10px; 
+  gap: 10px;
+}
+
+.app-container > .week-selector-nav .week-tab {
+  text-align: left;
+}
+
+.main-content {
+  grid-area: main;
+  overflow-y: auto; /* Sirf content area scroll hoga */
+  /* KEY CHANGE: Extra padding kam kar di */
+  padding: 20px; 
+}
+
+/* Tablet aur Mobile ke liye (Responsive Design) */
+@media (max-width: 1024px) {
+  body {
+    overflow: auto; /* Mobile par scrolling aam taur par kaam karti hai */
+  }
+
+  .app-container {
+    display: block;
+    height: auto;
+  }
+  
+  .app-container > .week-selector-nav {
+    position: sticky;
+    /* 
+      KEY CHANGE & GAP FIX: 'top' ki value ab header ki final height ke barabar hai.
+      Header ki height 48px + 2px border = 50px. Bilkul chipak kar aayega.
+    */
+    top: 50px; 
+    z-index: 99;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    overflow-x: auto;
+  }
+
+  .app-container > .week-selector-nav .week-selector {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px; /* Thodi aur padding kam ki */
+  }
+  
+  .main-content {
+    /* KEY CHANGE: Mobile par padding aur kam kar di */
+    padding: 15px; 
+  }
+}
+/* src/App.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  overflow: hidden;
+}
+
+.app-container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+
+.app-container > .app-header-wrapper {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-container > .week-selector-nav {
+  grid-area: sidebar;
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
+
+.app-container > .week-selector-nav .week-selector {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 15px 10px; 
+  gap: 10px;
+}
+
+.app-container > .week-selector-nav .week-tab {
+  text-align: left;
+}
+
+.main-content {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Tablet aur Mobile ke liye (Responsive Design) */
+@media (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+
+  .app-container {
+    display: block;
+    height: auto;
+  }
+  
+  .app-container > .week-selector-nav {
+    position: sticky;
+    /* 
+      KEY CHANGE & JUMP FIX:
+      Header ki height hai 40px aur border hai 2px. Total hua 42px.
+      'top' ki value ab header ki actual height (40px + 2px) = 42px kar di hai.
+      Ab yeh bilkul jump nahi karega.
+    */
+    top: 42px; 
+    z-index: 99;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    overflow-x: auto;
+  }
+
+  .app-container > .week-selector-nav .week-selector {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .main-content {
+    padding: 15px; 
+  }
+}
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  overflow: hidden;
+}
+
+.app-container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+}
+
+.app-container > .app-header-wrapper {
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-container > .week-selector-nav {
+  grid-area: sidebar;
+  border-right: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
+
+.app-container > .week-selector-nav .week-selector {
+  flex-direction: column;
+  align-items: stretch;
+  padding: 15px 10px; 
+  gap: 10px;
+}
+
+.app-container > .week-selector-nav .week-tab {
+  text-align: left;
+}
+
+.main-content {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+
+  .app-container {
+    display: block;
+    height: auto;
+  }
+  
+  .app-container > .week-selector-nav {
+    position: sticky;
+    /* 
+      KEY CHANGE & JUMP FIX:
+      Mobile par Header ki height = 40px, uska Border = 2px. Total = 42px.
+      'top' ki value 42px par set hai. Yeh jump ko rokega.
+    */
+    top: 42px;
+    z-index: 99;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    overflow-x: auto;
+  }
+
+  .app-container > .week-selector-nav .week-selector {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px; /* Padding kam ki */
+  }
+  
+  .main-content {
+    padding: 15px; 
+  }
+}
