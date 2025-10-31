@@ -1,0 +1,101 @@
+/* src/components/LiveUsers.css */
+.live-users-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e7f3ff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0056b3;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #28a745; /* Green dot */
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(40, 167, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+}
+
+@media (max-width: 768px) {
+    .live-users-container {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        gap: 6px;
+    }
+    .live-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+/* src/components/LiveUsers.css */
+
+/* KEY CHANGE: Poora design badal diya hai */
+.live-users-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  /* Naya eye-catchy look */
+  background-color: #e0f8e9; /* Halka, fresh green */
+  border: 1px solid #79d494; /* Thoda dark green border */
+  color: #006421; /* Dark green text */
+  padding: 6px 14px;
+  border-radius: 50px; /* Poora gol (pill shape) */
+  font-weight: 600; /* Thoda bold text */
+  
+  /* Shadow for depth */
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+  
+  /* Smooth hover effect */
+  transition: all 0.2s ease-in-out;
+  cursor: default; /* Taaki lage ki yeh button nahi hai */
+}
+
+/* Hover par thoda sa bada hoga */
+.live-users-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #28a745; /* Bright Green dot */
+  border-radius: 50%;
+  /* Animation ko aur behtar kiya */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+  }
+}
+
+/* Mobile ke liye thoda chhota size */
+@media (max-width: 768px) {
+    .live-users-container {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        gap: 6px;
+    }
+    .live-dot {
+        width: 8px;
+        height: 8px;
+    }
+}

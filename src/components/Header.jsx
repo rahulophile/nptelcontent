@@ -1,13 +1,14 @@
 // src/components/Header.jsx
 import React from 'react';
+import LiveUsers from './LiveUsers'; // Naya component import karo
 import './Header.css';
 
 const Header = () => {
   return (
     <header className="app-header">
-      <div className="logo-container">
-        {/* Title ko update kar diya hai aur subtitle hata diya hai */}
+      <div className="header-content">
         <h1 className="title">Ethical Hacking</h1>
+        <LiveUsers /> {/* Yahan component ko add kar diya */}
       </div>
     </header>
   );
