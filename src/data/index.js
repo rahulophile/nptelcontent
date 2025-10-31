@@ -1,12 +1,27 @@
-// src/data/index.js
+import { week1Content } from "./week1";
+import { week2Content } from "./week2";
+import { week3Content } from "./week3";
+import { week4Content } from "./week4";
+import { week5Content } from "./week5";
+import { week6Content } from "./week6";
+// import { week7Content } from "./week7";
+// import { week8Content } from "./week8";
+// import { week9Content } from "./week9";
+// import { week10Content } from "./week10";
+// import { week11Content } from "./week11";
+// import { week12Content } from "./week12";
 
-// Step 2.1: Kya week1Content yahan import ho raha hai?
-import { week1Content } from './week1';
-import { week2Content } from './week2'; // Yeh file bhi exist karni chahiye
-
-// Step 2.2: Kya allWeeksData object sahi se banaya gaya hai?
 export const allWeeksData = {
-  1: week1Content, // Key '1' honi chahiye aur value 'week1Content' honi chahiye
+  1: week1Content,
   2: week2Content,
-  // Baaki weeks yahan add honge
+  3: week3Content,
+  4: week4Content,
+  5: week5Content,
+  6: week6Content,
+//   7: week7Content,
+//   8: week8Content,
+//   9: week9Content,
+//   10: week10Content,
+//   11: week11Content,
+//   12: week12Content,
 };
